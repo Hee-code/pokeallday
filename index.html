@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>poke all day</title>
+  <link rel="stylesheet" href="../pokeallday/css/style.css">
+  <script src="https://kit.fontawesome.com/a6d4db907a.js" crossorigin="anonymous"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script>
+    $(document).ready(function(){
+  //메인배너
+  // 슬라이드 왼쪽으로 (다음)
+  function mainSlideNext() {
+    $(".bg").stop(true, true).animate({"margin-left": "-802px"}, 400, function(){
+      $(".e_cont>li").first().appendTo(".e_cont");
+      $(".e_cont").css({"margin-left": "-412px"});
+    });
+  }
+
+  //포케하위메뉴
+  $(".poke").mouseenter(function(){
+    $(".poke_list").addClass("active");
+  });
+  $(".poke").mouseleave(function(){
+    $(".poke_list").removeClass("active");
+  });
+
+  //베스트메뉴
+  function bSlide(){
+    $(".b_menu").stop(true, true).animate({"margin-left": "-382px"}, 400, function(){
+      $(".b_menu>li").first().appendTo(".b_menu");
+      $(".b_menu").css({"margin-left": "0px"});
+    });
+  }
+  setInterval(bSlide, 3000);
+
+  //이벤트
+  // 슬라이드 왼쪽으로 (다음)
+  function slideNext() {
+    $(".e_cont").stop(true, true).animate({"margin-left": "-802px"}, 400, function(){
+      $(".e_cont>li").first().appendTo(".e_cont");
+      $(".e_cont").css({"margin-left": "-412px"});
+    });
+  }
+  // 슬라이드 오른쪽으로 (이전)
+  function slidePrev() {
+    $(".e_cont").stop(true, true).animate({"margin-left": "px"}, 400, function(){
+      $(".e_cont>li").last().prependTo(".e_cont");
+      $(".e_cont").css({"margin-left": "-412px"});
+    });
+  }
+  $(".next").click(slideNext);
+  $(".prev").click(slidePrev);
+  setInterval(slideNext, 3000); // 자동 슬라이드
+});
+
+  //팀
+  function teamSlide (){
+    $(".t_list").stop(true, true).animate({"margin-left": "-376px"}, 400, function(){
+      $(".t_list>li").first().appendTo(".t_list");
+      $(".t_list").css({"margin-left": "0px"});
+    });
+  }
+  setInterval(teamSlide, 3000);
+  </script>
+</head>
+<body>
+  <div id="header">
+    <div class="menu">
+      <h1 class="logo"><img src="images/h_logo_w.png" alt="w_logo"></h1>
+      <ul class="nav">
+        <li>
+          <a href="#">브랜드</a>
+          <ul class="nav_sub">
+            <li><a href="#"><span style="font-family: 'Lexend' !important;">OUR STORY</span></a></li>
+            <li><a href="#"><span style="font-family: 'Lexend' !important;">HISTORY</span></a></li>
+            <li><a href="#"><span style="font-family: 'Lexend' !important;">INTERIOR</span></a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">신메뉴</a>
+        </li>
+        <li>
+          <a href="#">메뉴</a>
+          <ul class="nav_sub nav_sub1">
+            <li><a href="#"><span style="font-family: 'Lexend' !important;">SIGNATURE</span></a></li>
+            <li class="poke">
+              <a href="#"><span style="font-family: 'Lexend' !important;">POKE</span><p><i class="fa-solid fa-angle-right"></i></p></a>
+              <ul class="poke_list">
+                <li><a href="#"><span style="font-family: 'Lexend' !important;">Base</span></a></li>
+                <li><a href="#"><span style="font-family: 'Lexend' !important;">Main topping</span></a></li>
+                <li><a href="#"><span style="font-family: 'Lexend' !important;">Sauce</span></a></li>
+                <li><a href="#"><span style="font-family: 'Lexend' !important;">Add</span></a></li>
+              </ul>
+            </li>
+            <li><a href="#"><span style="font-family: 'Lexend' !important;">PROTEIN POKE</span></a></li>
+            <li><a href="#"><span style="font-family: 'Lexend' !important;">SIDE</span></a></li>
+            <li><a href="#"><span style="font-family: 'Lexend' !important;">DRINK</span></a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">단체주문</a>
+        </li>
+        <li>
+          <a href="#">칼로리/영양</a>
+          <ul class="nav_sub">
+            <li><a href="#">칼로리/영양성분</a></li>
+            <li> <a href="#">알러지 정리표</a></li>
+            <li><a href="#">영양정보</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">매장</a>
+        </li>
+        <li>
+          <a href="#">굿즈</a>
+        </li>
+        <li>
+          <a href="#">소식</a>
+          <ul class="nav_sub">
+            <li><a href="#">이벤트</a></li>
+            <li> <a href="#">콘텐츠</a></li>
+            <li><a href="#">뉴스룸</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">기업제휴</a>
+          <ul class="nav_sub">
+            <li><a href="#">찾아 오시는 길</a></li>
+            <li> <a href="#">기업제휴</a></li>
+            <li><a href="#">포케트럭 문의</a></li>
+          </ul>
+        </li>
+        <li class="b_radi">
+          <a href="#">가맹문의</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="h_bg">
+      <ul class="bg">
+        <li class="bg1">
+          <h1><span style="font-family: 'Lexend' !important;">Love Me all day</span></h1>
+          <div class="bg_logo"><img src="images/mainslider_logo.png" alt="slider_logo"></div>
+          <div class="bg_s"><img src="images/mainslider_line.png" alt=""></div>
+          <p>포케올데이로 사랑하자,<br>나를 더 자주!</p>
+        </li>
+        <li class="bg2">
+          <h1><span style="font-family: 'Lexend' !important;">Love Me all day</span></h1>
+          <div class="bg_logo"><img src="images/mainslider_logo.png" alt="slider_logo"></div>
+          <div class="bg_s"><img src="images/mainslider_line.png" alt=""></div>
+          <p>포케올데이로 사랑하자,<br>나를 더 자주!</p>
+        </li>
+        <li class="bg3">
+          <h1><span style="font-family: 'Lexend' !important;">Love Me all day</span></h1>
+          <div class="bg_logo"><img src="images/mainslider_logo.png" alt="slider_logo"></div>
+          <div class="bg_s"><img src="images/mainslider_line.png" alt=""></div>
+          <p>포케올데이로 사랑하자,<br>나를 더 자주!</p>
+        </li>
+      </ul>
+      <div class="h_slide">
+        <ul class="h_bar">
+          <li class="active"></li>
+          <li></li>
+          <li></li>
+        </ul>
+        <ul class="h_page">
+          <li class="prev1"><i class="fa-solid fa-angle-left"></i></li>
+          <li>
+            <ul class="c_num">
+            <li class="on">01</li>
+            <li>02</li>
+            <li>03</li>
+            </ul>
+          </li>
+          <li class="do">/03</li>
+          <li class="next1"><i class="fa-solid fa-angle-right"></i></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div id="section">
+    <!-- 베스트메뉴 -->
+    <div class="best">
+      <h1>Best Menu</h1>
+      <p>672가지의 커스터마이징 포케올데이의 맛을 느껴보세요</p>
+      <ul class="b_menu">
+        <li>
+          <div class="menu_img"><img src="images/best1.png" alt="best1"><span>BEST 1</span></div>
+          <h3>야채만+구운버섯</h3>
+          <p>Vegetable only + Grilled Mushroom</p>
+        </li>
+        <li>
+          <div class="menu_img"><img src="images/best2.png" alt="best2"><span>BEST 2</span></div>
+          <h3>육회 들기름 메밀면 샐러드</h3>
+          <p>Beef tartare perilla oil soba salad</p>
+        </li>
+        <li>
+          <div class="menu_img"><img src="images/best3.png" alt="best3"><span>BEST 3</span></div>
+          <h3>곡물밥+스파이시참치</h3>
+          <p>Grain Rice + Spicy Salmon</p>
+        </li>
+        <li>
+          <div class="menu_img"><img src="images/best4.png" alt="best4"><span>BEST 4</span></div>
+          <h3>야채만+소불고기</h3>
+          <p>Vegetable only + bulgogi</p>
+        </li>
+        <li>
+          <div class="menu_img"><img src="images/best5.png" alt="best5"><span>BEST 5</span></div>
+          <h3>메밀면+훈제오리</h3>
+          <p>Soba noodle + duck Meat</p>
+        </li>
+        <li>
+          <div class="menu_img"><img src="images/best6.png" alt="best6"><span>BEST 6</span></div>
+          <h3>곡물밥+연어</h3>
+          <p>Grain Rice + Salmon</p>
+        </li>
+      </ul>
+      <p class="bm_btn"><a href="#">칼로리 및 영양성분 보러가기</a></p>
+    </div>
+    <!-- 베스트메뉴 -->
+
+    <!-- 브랜드 -->
+    <div class="brand">
+      <ul>
+        <li class="txt_title">
+          <span style="font-family: 'Lexend' !important;">Love Me all day<br>Poke all day</span>
+        </li>
+        <li class="txt_sub">
+          포케올데이는 건강과 함께 끊임없는 새로운 즐거움을 찾아나가며,<br>
+          자주 볼수록 더욱 즐거운 경험을 선사하는 브랜드입니다.
+        </li>
+        <li class="b_btn"><a href="#">자세히 보기</a></li>
+      </ul>
+      <img src="images/brand_img.png" alt="brand">
+    </div>
+    <!-- 브랜드 -->
+
+    <!-- 가맹 문의 -->
+    <div class="contact">
+      <img src="images/contact_img.png" alt="contact">
+      <ul>
+        <li class="txt_tit_sub"><span style="font-family: 'Lexend' !important;">NO.1 POKE BRAND</span></li>
+        <li class="txt_title"><span style="font-family: 'Lexend' !important;">Poke all day</span></li>
+        <li class="txt_sub">
+          포케올데이와 즐거운 삶의 가치 경험을<br>
+          함께 할 가맹점 점주님을 모집합니다.
+        </li>
+        <li class="c_btn"><a href="#">가맹 문의 바로가기</a></li>
+      </ul>
+    </div>
+    <!-- 가맹 문의 -->
+
+    <!-- 검색 -->
+    <div class="search">
+      <h1><span style="font-family: 'Lexend' !important;">Search Store</span></h1>
+      <p>가까운 포케올데이 매장을 검색해보세요!</p>
+      <div class="fl">
+        <div class="s_bar">매장 찾으러 가기</div>
+        <div class="s_icon"><i class="fa-solid fa-magnifying-glass"></i></div>
+      </div>
+    </div>
+    <!-- 검색 -->
+
+    <!-- 이벤트 -->
+    <div class="event">
+      <div class="e_txt">
+        <h1><span style="font-family: 'Lexend' !important;">Event</span></h1>
+        <p>포케올데이에서 진행하는 다양한 이벤트를 만나보세요!</p>
+      </div>
+      <ul class="e_cont">
+        <li>
+          <img src="images/370x370.crop (1).jpg" alt="e1">
+          <p>포케올데이 x 아시아나항공 3주년 기념 이벤트🛫</p>
+        </li>
+        <li>
+          <img src="images/370x370.crop (2).jpg" alt="e2">
+          <p>2023 포케올데이 비치타월과 함께하는 여름휴가 이벤트🌊</p>
+        </li>
+        <li>
+          <img src="images/370x370.crop (3).jpg" alt="e3">
+          <p>포케올데이 🌟100호점 달성🌟 기념 이벤트!</p>
+        </li>
+        <li>
+          <img src="images/370x370.crop (4).jpg" alt="e4">
+          <p>2023 세계 환경의 날 '비건 올데이(Vegan all day)' 이벤트🥗</p>
+        </li>
+        <li>
+          <img src="images/370x370.crop (5).jpg" alt="e5">
+          <p>2023 5월 가정의 달 펫밀리 이벤트🐶</p>
+        </li>
+        <li>
+          <img src="images/370x370.crop (6).jpg" alt="e6">
+          <p>2023 포케트럭 이벤트🚛</p>
+        </li>
+        <li>
+          <img src="images/370x370.crop (7).jpg" alt="e7">
+          <p>2023년 캘린더 이벤트</p>
+        </li>
+      </ul>
+      <ul class="e_arrow">
+        <li class="prev"><i class="fa-solid fa-angle-left"></i></li>
+        <li class="next"><i class="fa-solid fa-angle-right"></i></li>
+      </ul>
+    </div>
+    <!-- 이벤트 -->
+
+    <!-- 팀 -->
+    <div class="team">
+      <h1><span style="font-family: 'Lexend' !important;">Meet<br>Our <span class="cc">Team</span></span></h1>
+      <ul class="t_list">
+        <li>
+          <img src="images/t1_CEO.png" alt="ceo">
+          <div><p><span style="font-family: 'Lexend' !important;">CEO</span></p></div>
+        </li>
+        <li>
+          <img src="images/t2_management.png" alt="management">
+          <p><span style="font-family: 'Lexend' !important;">Franchise<br>management</span></p>
+        </li>
+        <li>
+          <img src="images/t3_Design.png" alt="design">
+          <div><p><span style="font-family: 'Lexend' !important;">Design</span></p></div>
+        </li>
+        <li>
+          <img src="images/t4_Marketing.png" alt="marketing">
+          <div><p><span style="font-family: 'Lexend' !important;">Marketing</span></p></div>
+        </li>
+        <li>
+          <img src="images/t5_R&D.png" alt="r&d">
+          <div><p><span style="font-family: 'Lexend' !important;">R&D</span></p></div>
+        </li>
+        <li>
+          <img src="images/t6_HR.png" alt="hr">
+          <p><span style="font-family: 'Lexend' !important;">HR & General<br>Affairs</span></p>
+        </li>
+        <li>
+          <img src="images/t7_planning.png" alt="planning">
+          <p><span style="font-family: 'Lexend' !important;">Stategic<br>Planning</span></p>
+        </li>
+        <li>
+          <img src="images/t8_accounting.png" alt="accounting">
+          <p><span style="font-family: 'Lexend' !important;">Financial<br>Accounting</span></p>
+        </li>
+      </ul>
+    </div>
+    <!-- 팀 -->
+
+    <!-- 픽스 -->
+    <div class="fix">
+      <ul>
+        <li>
+          <div class="bg_g">
+            <img src="images/fixed_logo.png" alt="f_logo">
+            <p>포케트럭 신청</p>
+          </div>
+          <img src="images/fixed_img.jpg" alt="truck">
+          <p class="f_btn">문의하기</p>
+          <div class="l_fix">
+            <p><i class="fa-solid fa-handshake-simple"></i>기업제휴</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <!-- 픽스 -->
+  </div>
+
+  <div id="footer">
+    <div class="ft">
+      <h1><img src="images/footer_logo.png" alt="footer_logo"></h1>
+      <div class="foot_cont">
+        <ul class="fc">
+          <li>상호 : 주식회사 네오에프엔비</li>
+          <li>대표자 : 김영환</li>
+          <li>제휴 · 제안 : mt@neofnb.com</li>
+        </ul>
+        <ul class="fc">
+          <li>대표번호 : 1811-7363</li>
+          <li>주소 : 인천 연수구 인천타워대로 323 송도 센트로드A동 2007호</li>
+        </ul>
+        <ul class="fc">
+          <li>사업자등록번호 : 681-81-02539</li>
+          <li>통신판매업신고번호: 2022-서울강남-02412</li>
+          <li>개인정보처리방침</li>
+        </ul>
+        <ul class="f_icon">
+          <li><img src="images/youtube.png" alt="youtube"></li>
+          <li class="i_mar"><img src="images/insta.png" alt="insta"></li>
+          <li><img src="images/blog.png" alt="blog"></li>
+        </ul>
+        <p>ⓒ 2024 NeoF&B Inc. All Rights Reserved.</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
