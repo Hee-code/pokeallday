@@ -12,14 +12,148 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   <script>
     $(document).ready(function(){
-  //메인배너
-  // 슬라이드 왼쪽으로 (다음)
-  function mainSlideNext() {
-    $(".bg").stop(true, true).animate({"margin-left": "-802px"}, 400, function(){
-      $(".e_cont>li").first().appendTo(".e_cont");
-      $(".e_cont").css({"margin-left": "-412px"});
+      let list = $(".h_bar>li.active1").index();
+      let count = $(".bg>li").length;
+
+  // $(".h_bar>li").click(function(){
+  //   list = $(this).index();
+  //   $(".h_bar>li").removeClass("active1");
+  //   $(".h_bar>li").eq(list).addClass("active1");
+
+  //   $(".bg>li").stop().fadeOut();
+  //   $(".bg>li").eq(list).stop().fadeIn();
+  // });
+
+  // $(".h_bar>li").click(function(){
+  //   list = $(this).index();
+  //   $(".h_bar>li").removeClass("active1");
+  //   $(".h_bar>li").eq(list).addClass("active1");
+  // });
+
+  function sslideNext(){
+    if(list == count - 1){
+      list = 0;
+    }else{
+      list++;
+    }
+    $(".bg").stop().animate({"margin-left":"-100%"}, 500, function(){
+      $(".bg>li").first().appendTo(".bg");
+      $(".bg").css({"margin-left":"0%"});
     });
+    // $(".h_bar>li").removeClass("active1");
+    // $(".h_bar>li").eq(list).addClass("active1");
   }
+
+
+  setInterval(sslideNext, 5000);
+
+
+
+  // function sslidePrev(){
+  //   $(".bg").stop().animate({"margin-left":"0"}, 3000, function(){
+  //     $(".bg>li").first().appenTo(".bg");
+  //     $(".bg").css({"margin-left":"-100%"});
+  //   });
+  // }
+
+  // $(".next1").click(sslideNext);
+  // $(".prev1").click(sslidePrev);
+
+ 
+
+  // $(".next1").click(function(){
+  //   if(list == count - 1){
+  //     list=0;
+  //   }else{
+  //     list++;
+  //   }
+  //   $(".h_bar>li").removeClass("active1");
+  //   $(".h_bar>li").eq(list).addClass("active1");
+
+  //   $(".bg>li").stop().fadeOut();
+  //   $(".bg>li").eq(list).stop().fadeIn();
+  // });
+
+  // $(".prev1").click(function(){
+  //   if(list == 0){
+  //     list = count - 1;
+  //   }else{
+  //     list--;
+  //   }
+  //   $(".h_bar>li").removeClass("active1");
+  //   $(".h_bar>li").eq(list).addClass("active1");
+
+  //   $(".bg>li").stop().fadeOut();
+  //   $(".bg>li").eq(list).stop().fadeIn();
+  // });
+
+
+
+
+
+  //지피티가 짜준 코드(실행안됨)
+//   $(document).ready(function(){
+//   let list = 0;
+//   let count = $(".bg>li").length;
+//   let timer;
+
+//   function changeSlide(index) {
+//     list = index;
+
+//     // 슬라이드 전환
+//     $(".bg>li").stop().fadeOut();
+//     $(".bg>li").eq(list).stop().fadeIn();
+
+//     // 하단 바
+//     $(".h_bar>li").removeClass("active");
+//     $(".h_bar>li").eq(list).addClass("active");
+
+//     // 숫자 전환
+//     $(".c_num>li").removeClass("on");
+//     $(".c_num>li").eq(list).addClass("on");
+//   }
+
+//   function nextSlide() {
+//     let next = (list + 1) % count;
+//     changeSlide(next);
+//   }
+
+//   function prevSlide() {
+//     let prev = (list - 1 + count) % count;
+//     changeSlide(prev);
+//   }
+
+//   function startAutoSlide() {
+//     timer = setInterval(nextSlide, 5000);
+//   }
+
+//   function resetAutoSlide() {
+//     clearInterval(timer);
+//     startAutoSlide();
+//   }
+
+//   // 버튼 클릭 이벤트
+//   $(".h_bar>li").click(function(){
+//     changeSlide($(this).index());
+//     resetAutoSlide();
+//   });
+
+//   $(".next1").click(function(){
+//     nextSlide();
+//     resetAutoSlide();
+//   });
+
+//   $(".prev1").click(function(){
+//     prevSlide();
+//     resetAutoSlide();
+//   });
+
+//   // 초기 상태
+//   $(".bg>li").hide();
+//   $(".bg>li").eq(list).show();
+//   changeSlide(list);
+//   startAutoSlide();
+// });
 
   //포케하위메뉴
   $(".poke").mouseenter(function(){
@@ -164,11 +298,11 @@
       </ul>
       <div class="h_slide">
         <ul class="h_bar">
-          <li class="active"></li>
-          <li></li>
+          <!-- <li class="active1"></li>
+          <li></li> -->
           <li></li>
         </ul>
-        <ul class="h_page">
+        <!-- <ul class="h_page">
           <li class="prev1"><i class="fa-solid fa-angle-left"></i></li>
           <li>
             <ul class="c_num">
@@ -179,7 +313,7 @@
           </li>
           <li class="do">/03</li>
           <li class="next1"><i class="fa-solid fa-angle-right"></i></li>
-        </ul>
+        </ul> -->
       </div>
     </div>
   </div>
@@ -396,5 +530,6 @@
       </div>
     </div>
   </div>
+
 </body>
 </html>
