@@ -59,7 +59,7 @@
   // $(".next1").click(sslideNext);
   // $(".prev1").click(sslidePrev);
 
- 
+
 
   // $(".next1").click(function(){
   //   if(list == count - 1){
@@ -86,74 +86,6 @@
   //   $(".bg>li").stop().fadeOut();
   //   $(".bg>li").eq(list).stop().fadeIn();
   // });
-
-
-
-
-
-  //지피티가 짜준 코드(실행안됨)
-//   $(document).ready(function(){
-//   let list = 0;
-//   let count = $(".bg>li").length;
-//   let timer;
-
-//   function changeSlide(index) {
-//     list = index;
-
-//     // 슬라이드 전환
-//     $(".bg>li").stop().fadeOut();
-//     $(".bg>li").eq(list).stop().fadeIn();
-
-//     // 하단 바
-//     $(".h_bar>li").removeClass("active");
-//     $(".h_bar>li").eq(list).addClass("active");
-
-//     // 숫자 전환
-//     $(".c_num>li").removeClass("on");
-//     $(".c_num>li").eq(list).addClass("on");
-//   }
-
-//   function nextSlide() {
-//     let next = (list + 1) % count;
-//     changeSlide(next);
-//   }
-
-//   function prevSlide() {
-//     let prev = (list - 1 + count) % count;
-//     changeSlide(prev);
-//   }
-
-//   function startAutoSlide() {
-//     timer = setInterval(nextSlide, 5000);
-//   }
-
-//   function resetAutoSlide() {
-//     clearInterval(timer);
-//     startAutoSlide();
-//   }
-
-//   // 버튼 클릭 이벤트
-//   $(".h_bar>li").click(function(){
-//     changeSlide($(this).index());
-//     resetAutoSlide();
-//   });
-
-//   $(".next1").click(function(){
-//     nextSlide();
-//     resetAutoSlide();
-//   });
-
-//   $(".prev1").click(function(){
-//     prevSlide();
-//     resetAutoSlide();
-//   });
-
-//   // 초기 상태
-//   $(".bg>li").hide();
-//   $(".bg>li").eq(list).show();
-//   changeSlide(list);
-//   startAutoSlide();
-// });
 
   //포케하위메뉴
   $(".poke").mouseenter(function(){
@@ -182,7 +114,7 @@
   }
   // 슬라이드 오른쪽으로 (이전)
   function slidePrev() {
-    $(".e_cont").stop(true, true).animate({"margin-left": "px"}, 400, function(){
+    $(".e_cont").stop(true, true).animate({"margin-left": "0px"}, 400, function(){
       $(".e_cont>li").last().prependTo(".e_cont");
       $(".e_cont").css({"margin-left": "-412px"});
     });
