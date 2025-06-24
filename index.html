@@ -15,21 +15,16 @@
       let list = $(".h_bar>li.active1").index();
       let count = $(".bg>li").length;
 
-  // $(".h_bar>li").click(function(){
-  //   list = $(this).index();
-  //   $(".h_bar>li").removeClass("active1");
-  //   $(".h_bar>li").eq(list).addClass("active1");
+  //헤더 고정
+  $(window).on("scroll",function(){
+    if ($(this).scrollTop()>750){
+      $("#header").addClass("fixed");
+    }else{
+      $("#header").removeClass("fixed");
+    }
+  });
 
-  //   $(".bg>li").stop().fadeOut();
-  //   $(".bg>li").eq(list).stop().fadeIn();
-  // });
-
-  // $(".h_bar>li").click(function(){
-  //   list = $(this).index();
-  //   $(".h_bar>li").removeClass("active1");
-  //   $(".h_bar>li").eq(list).addClass("active1");
-  // });
-
+  //메인배너
   function sslideNext(){
     if(list == count - 1){
       list = 0;
@@ -40,52 +35,8 @@
       $(".bg>li").first().appendTo(".bg");
       $(".bg").css({"margin-left":"0%"});
     });
-    // $(".h_bar>li").removeClass("active1");
-    // $(".h_bar>li").eq(list).addClass("active1");
   }
-
-
   setInterval(sslideNext, 5000);
-
-
-
-  // function sslidePrev(){
-  //   $(".bg").stop().animate({"margin-left":"0"}, 3000, function(){
-  //     $(".bg>li").first().appenTo(".bg");
-  //     $(".bg").css({"margin-left":"-100%"});
-  //   });
-  // }
-
-  // $(".next1").click(sslideNext);
-  // $(".prev1").click(sslidePrev);
-
-
-
-  // $(".next1").click(function(){
-  //   if(list == count - 1){
-  //     list=0;
-  //   }else{
-  //     list++;
-  //   }
-  //   $(".h_bar>li").removeClass("active1");
-  //   $(".h_bar>li").eq(list).addClass("active1");
-
-  //   $(".bg>li").stop().fadeOut();
-  //   $(".bg>li").eq(list).stop().fadeIn();
-  // });
-
-  // $(".prev1").click(function(){
-  //   if(list == 0){
-  //     list = count - 1;
-  //   }else{
-  //     list--;
-  //   }
-  //   $(".h_bar>li").removeClass("active1");
-  //   $(".h_bar>li").eq(list).addClass("active1");
-
-  //   $(".bg>li").stop().fadeOut();
-  //   $(".bg>li").eq(list).stop().fadeIn();
-  // });
 
   //포케하위메뉴
   $(".poke").mouseenter(function(){
@@ -137,7 +88,7 @@
 <body>
   <div id="header">
     <div class="menu">
-      <h1 class="logo"><img src="images/h_logo_w.png" alt="w_logo"></h1>
+      <h1 class="logo"></h1>
       <ul class="nav">
         <li>
           <a href="#">브랜드</a>
@@ -206,7 +157,10 @@
         </li>
       </ul>
     </div>
+  </div>
 
+  <div id="section">
+    <!-- 메인배너 -->
     <div class="h_bg">
       <ul class="bg">
         <li class="bg1">
@@ -248,9 +202,8 @@
         </ul> -->
       </div>
     </div>
-  </div>
+    <!-- 메인배너 -->
 
-  <div id="section">
     <!-- 베스트메뉴 -->
     <div class="best">
       <h1><span style="font-family: 'Lexend' !important;">Best Menu</span></h1>
@@ -425,10 +378,10 @@
             <p>포케트럭 신청</p>
           </div>
           <img src="images/fixed_img.jpg" alt="truck">
-          <p class="f_btn">문의하기</p>
-          <div class="l_fix">
+          <button class="f_btn">문의하기</button>
+          <button class="l_fix">
             <p><i class="fa-solid fa-handshake-simple"></i>기업제휴</p>
-          </div>
+          </button>
         </li>
       </ul>
     </div>

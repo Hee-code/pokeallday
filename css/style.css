@@ -15,8 +15,16 @@ body {
 #header{
   width:100%; height:100px;
   position: relative;
-  z-index: 5;
+  z-index: 10;
 }
+
+#header.fixed{
+  position:fixed;
+  top:0; left:0;
+  background-color: #fff;
+  transition: all 0.5s;
+}
+
 #header .menu{
   width:1160px; height:100px;
   margin:0 auto;
@@ -26,12 +34,32 @@ body {
   position: relative;
   z-index: 10;
 }
+#header .menu .logo{
+  width: 255px; height: 48px;
+  background-image: url(../images/h_logo_w.png);
+}
+
+#header.fixed .logo{
+  width:255px; height: 48px;
+  background-image: url(../images/h_logo_c.png);
+}
+
 #header .menu .nav{
   width:840px; height:100px;
   display: flex;
   justify-content: space-between;
 }
 #header .menu .nav>li{
+  position: relative;
+}
+
+#header.fixed .menu .nav>li>a{
+  color:#212121;
+}
+
+#header .menu .nav>li>a{
+  line-height: 100px;
+  color:white;
   position: relative;
 }
 #header .menu .nav>li:hover>a{
@@ -41,12 +69,10 @@ body {
   color:white;
 }
 
-#header .menu .nav>li>a{
-  line-height: 100px;
-  color:white;
-  font-weight: bold;
-  position: relative;
+#header.fixed .menu .nav .b_radi>a{
+  color: white;
 }
+
 #header .menu .nav>li>a:after{
   content:"";
   display: block;
@@ -158,30 +184,33 @@ body {
 
 
 
-/* --------------------------- */
-#header .h_bg{
+
+#section{
+  width:100%;
+}
+
+#section .h_bg{
   width: 100%;
   position: relative;
   z-index: 5;
   margin-top: -100px;
   overflow: hidden;
 }
-#header .h_bg .bg{
+#section .h_bg .bg{
   width:300%;
   display:flex;
-  /* margin-left: -100%; */
 }
-#header .h_bg .bg>li{
+#section .h_bg .bg>li{
   width:100%;
   height:960px;
   text-align: center;
   background-repeat: no-repeat;
   background-position: center;
 }
-#header .h_bg .bg>li.bg1{background-image: url(../images/mainslider1.png);;}
-#header .h_bg .bg>li.bg2{background-image: url(../images/mainslider2.png);}
-#header .h_bg .bg>li.bg3{background-image: url(../images/mainslider3.png);}
-#header .h_bg .bg>li>h1{
+#section .h_bg .bg>li.bg1{background-image: url(../images/mainslider1.png);;}
+#section .h_bg .bg>li.bg2{background-image: url(../images/mainslider2.png);}
+#section .h_bg .bg>li.bg3{background-image: url(../images/mainslider3.png);}
+#section .h_bg .bg>li>h1{
   margin-left:240px;
   width:600px;;
   color:white;
@@ -191,38 +220,36 @@ body {
   letter-spacing: -1px;
   font-weight: 600;
 }
-#header .h_bg .bg>li .bg_logo{
+#section .h_bg .bg>li .bg_logo{
   margin-left:220px;
   width:600px;
   margin-bottom:40px;
 }
-#header .h_bg .bg>li .bg_s{
+#section .h_bg .bg>li .bg_s{
   margin-left:240px;
   width:600px;
   margin-bottom:30px;
 }
-#header .h_bg .bg>li>p{
+#section .h_bg .bg>li>p{
   margin-left:240px;
   width:600px;
   font-size: 40px;
   color:white;
 }
-#header .h_bg .h_slide{
+#section .h_bg .h_slide{
   width:1020px;
   display: flex;
   position: absolute;
   top:870px; left:50%;
   margin-left:-510px;
 }
-#header .h_bg .h_slide .h_bar{
-  /* display: flex; */
+#section .h_bg .h_slide .h_bar{
   width: 1020px; height:3px;
   background-color: #ffffff91;
 }
-#header .h_bg .h_slide .h_bar>li{
+#section .h_bg .h_slide .h_bar>li{
   width:340px; height:3px;
   background-color: rgb(255, 255, 255);
-  /* transition: all 0.3s; */
   animation: move 15s infinite;
 }
 
@@ -236,57 +263,13 @@ body {
   100%{margin-left: 1px;}
 }
 
-/* #header .h_bg .h_slide .h_bar .active1{
-  opacity: 1;
-} */
-/* #header .h_bg .h_slide .h_bar>li:hover,
-#header .h_bg .h_slide .h_bar .active1:hover{
-  opacity:1;
-} */
 
 
 
-/* #header .h_bg .h_slide .h_page{
-  display: flex;
-  margin-left: 10px;
-  margin-top:-11px;
-} */
-/* #header .h_bg .h_slide .h_page>li{
-  color:white;
-  font-weight: 700;
-  font-size: 20px;
-  line-height: 23px;
-  position: relative;
-} */
-/* #header .h_bg .h_slide .h_page>.do{
-  margin-left:25px;
-  opacity: 0.7;
-} */
-/* #header .h_bg .h_slide .h_page>li>i{
-  font-size: 1.3em;
-  opacity: 0.7;
-  transition: all 0.3s;
-} */
-/* #header .h_bg .h_slide .h_page>li>i:hover{
-  opacity: 1;
-}
-#header .h_bg .h_slide .h_page>li .c_num>li{
-  position:absolute;
-  top:0; left:0;
-  opacity: 0;
-}
-#header .h_bg .h_slide .h_page>li .c_num .on{
-  opacity: 1;
-} */
-
-
-#section{
-  width:100%;
-}
 
 /* 베스트메뉴 */
 #section .best{
-  margin-top:1000px;
+  margin-top:150px;
   text-align: center;
   overflow: hidden;
 }
@@ -314,7 +297,6 @@ body {
 #section .best .b_menu{
   display: flex;
   margin-top:60px;
-  /* margin-left:-382px; */
 }
 #section .best .b_menu>li{
   margin:0 12px;
@@ -377,8 +359,6 @@ body {
   display: flex;
   margin:0 auto;
   margin-top:250px;
-  /* background-color: #00ae77; */
-  /* margin-left:380px; */
   justify-content: flex-end;
 }
 #section .brand>ul .txt_title{
@@ -518,6 +498,8 @@ body {
   line-height: 78px;
   color:#616161;
   font-size: 20px;
+  border:1px solid white;
+  cursor: pointer;
 }
 #section .search .fl>.s_bar:hover{
   font-weight: 600;
@@ -528,6 +510,7 @@ body {
   border-radius: 50%;
   position: absolute;
   top:9px; right:10px;
+  cursor: pointer;
 }
 #section .search .fl>.s_icon>i{
   color:white;
@@ -574,11 +557,11 @@ body {
   display: flex;
   margin-left:-412px;
   margin-top:60px;
-  /* background-color:#00ae77; */
 }
 #section .event .e_cont>li{
   width: 370px;
   margin:0px 10px;
+  cursor: pointer;
 }
 #section .event .e_cont>li>img{
   width:370px;
@@ -599,14 +582,12 @@ body {
   background-color: #ffffffcc;
   position: absolute;
   top:-440px;
-  /* border:1px solid red; */
 }
 #section .event .e_arrow .prev{
   left:0;
 }
 #section .event .e_arrow .next{
   right:0;
-  /* width:360px; */
 }
 #section .event .e_arrow>li>i{
   width: 50px; height: 50px;
@@ -652,7 +633,7 @@ body {
   font-weight: 900;
   background-color: #00ae77;
   position: relative;
-  z-index: 10;
+  z-index: 8;
 }
 #section .team>h1 .cc{
   color:#e74c39;
@@ -699,7 +680,7 @@ body {
 
 /* 픽스 */
 #section .fix>ul{
-  width: 210px; height: 364px;
+  width: 210px; height: 374px;
   border-radius: 20px;
   background-color: #fff;
   text-align: center;
@@ -730,13 +711,17 @@ body {
   font-size: 14px;
   color:white;
   font-weight: 600;
-  margin-top:15px;
+  margin-top:25px;
+  border:0;
+  cursor: pointer;
 }
 #section .fix>ul>li>.l_fix{
   width:210px; height: 55px;
   background-color: #fff;
   border-radius: 30px;
-  margin-top:25px;
+  margin-top:30px;
+  border:0;
+  cursor: pointer;
 }
 #section .fix>ul>li>.l_fix>p{
   font-size: 18px;
