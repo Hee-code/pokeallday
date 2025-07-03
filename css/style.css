@@ -8,7 +8,6 @@ img{border:0; vertical-align:top;}
 body {
     font-family: 'Pretendard-Regular';
     src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
-    font-weight: 500;
     font-style: normal;
 }
 
@@ -55,12 +54,14 @@ body {
 
 #header.fixed .menu .nav>li>a{
   color:#212121;
+  font-weight: 500;
 }
 
 #header .menu .nav>li>a{
   line-height: 100px;
   color:white;
   position: relative;
+  font-weight: 500;
 }
 #header .menu .nav>li:hover>a{
   color:#00ae77
