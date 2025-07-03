@@ -5,10 +5,15 @@ ul{list-style:none;}
 a{text-decoration:none; color:black;}
 img{border:0; vertical-align:top;}
 
+@font-face {
+  font-family: 'Pretendard';
+  src: url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/variable/pretendardvariable.woff2') format('woff2-variations');
+  font-weight: 100 900;
+  font-style: normal;
+}
+
 body {
-    font-family: 'Pretendard-Regular';
-    src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
-    font-style: normal;
+  font-family: 'Pretendard', sans-serif;
 }
 
 #header{
@@ -55,6 +60,7 @@ body {
 #header.fixed .menu .nav>li>a{
   color:#212121;
   font-weight: 500;
+  font-size: 17px;
 }
 
 #header .menu .nav>li>a{
@@ -62,6 +68,7 @@ body {
   color:white;
   position: relative;
   font-weight: 500;
+  font-size: 17px;
 }
 #header .menu .nav>li:hover>a{
   color:#00ae77
@@ -106,7 +113,6 @@ body {
   position: absolute;
   top:85px; left:-20px;
   padding:10px;
-  /* box-sizing: border-box; */
   box-shadow: 1px 1px 3px rgba(128, 128, 128, 0.411);
   line-height: 35px;
   display: none;
@@ -689,6 +695,7 @@ body {
   position:fixed;
   bottom:250px; right:50px;
   z-index: 10;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
 }
 #section .fix>ul>li>.bg_g{
   background-color: #00ae77;
@@ -720,9 +727,10 @@ body {
   width:210px; height: 55px;
   background-color: #fff;
   border-radius: 30px;
-  margin-top:30px;
+  margin-top:40px;
   border:0;
   cursor: pointer;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.14);
 }
 #section .fix>ul>li>.l_fix>p{
   font-size: 18px;
