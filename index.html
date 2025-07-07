@@ -33,15 +33,6 @@
     $(".poke_list").removeClass("active");
   });
 });
-
-  //팀
-  // function teamSlide (){
-  //   $(".t_list").stop(true, true).animate({"margin-left": "-376px"}, 400, function(){
-  //     $(".t_list>li").first().appendTo(".t_list");
-  //     $(".t_list").css({"margin-left": "0px"});
-  //   });
-  // }
-  // setInterval(teamSlide, 3000);
   </script>
 </head>
 <body>
@@ -115,6 +106,7 @@
           <a href="#">가맹문의</a>
         </li>
       </ul>
+      <div class="ham"></div>
     </div>
   </div>
 
@@ -208,7 +200,7 @@
           <span style="font-family: 'Lexend' !important;">Love Me all day<br>Poke all day</span>
         </li>
         <li class="txt_sub">
-          포케올데이는 건강과 함께 끊임없는 새로운 즐거움을 찾아나가며,<br>
+          포케올데이는 건강과 함께 끊임없는 새로운 즐거움을 찾아나가며,<br class="m_del">
           자주 볼수록 더욱 즐거운 경험을 선사하는 브랜드입니다.
         </li>
         <li class="b_btn"><a href="#">자세히 보기</a></li>
@@ -224,7 +216,7 @@
         <li class="txt_tit_sub"><span style="font-family: 'Lexend' !important;">NO.1 POKE BRAND</span></li>
         <li class="txt_title"><span style="font-family: 'Lexend' !important;">Poke all day</span></li>
         <li class="txt_sub">
-          포케올데이와 즐거운 삶의 가치 경험을<br>
+          포케올데이와 즐거운 삶의 가치 경험을<br class="m_del">
           함께 할 가맹점 점주님을 모집합니다.
         </li>
         <li class="c_btn"><a href="#">가맹 문의 바로가기</a></li>
@@ -369,7 +361,7 @@
         <ul class="fc">
           <li>사업자등록번호 : 681-81-02539</li>
           <li>통신판매업신고번호: 2022-서울강남-02412</li>
-          <li>개인정보처리방침</li>
+          <li class="wrap">개인정보처리방침</li>
         </ul>
         <ul class="f_icon">
           <li><img src="images/youtube.png" alt="youtube"></li>
@@ -388,6 +380,7 @@
     document.addEventListener("DOMContentLoaded", function () {
     const mainSwiper = new Swiper(".mainSwiper", {
       loop: true,
+      slidesPerView:1,
       autoplay: {
         delay: 5000,
         disableOnInteraction: false,
@@ -424,6 +417,14 @@
         disableOnInteraction:false
       },
       speed:600,
+      breakpoints:{
+        0:{
+          slidesPerView:2,
+        },
+        991:{
+          slidesPerView:5,
+        }
+      }
     });
   });
 
@@ -446,6 +447,18 @@
       },
       speed: 600,
       centeredSlides: false,
+      breakpoints:{
+        0:{
+          slidesPerView:1.2,
+          centeredSlides: true,
+          spaceBetween:10,
+        },
+        500:{
+          slidesPerView:1.2,
+          centeredSlides: true,
+          spaceBetween:40,
+        }
+      }
     });
   });
 
@@ -454,14 +467,29 @@
   window.addEventListener("load", function () {
     new Swiper(".teamSwiper", {
       loop: true,
-      slidesPerView: 5,
-      spaceBetween: 20,
-      centeredSlides: true,
+      // loopAdditionalSlides: 5,
+      slidesPerView:5,
+      slidesPerGroup: 1,
+      loopedSlides: 8,
+      spaceBetween: 25,
+      centeredSlides: false,
       autoplay: {
         delay: 3000,
         disableOnInteraction: false,
       },
       speed: 600,
+      breakpoints:{
+        0:{
+          slidesPerView:1,
+          spaceBetween:10,
+        },
+        990:{
+          slidesPerView:4.2,
+        },
+        1370:{
+          slidesPerView:5,
+        }
+      }
     });
   });
   </script>
